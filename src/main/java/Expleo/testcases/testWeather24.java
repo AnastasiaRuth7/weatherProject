@@ -38,7 +38,7 @@ public class testWeather24 {
 
         @Test
         public void testWeather() throws Exception {
-            weather24PageObject weather = PageFactory.initElements (driver, weather24PageObject.class);
+            weather24PageObject weather = PageFactory.initElements(driver, weather24PageObject.class);
 
             driver.findElement(By.xpath(".//*[@id='ctl00_WeatherContentHolder_ddlCity']")).click();
             driver.findElement(By.xpath(".//*[@id='ctl00_WeatherContentHolder_ddlCity']/option[73]")).click();
@@ -48,27 +48,27 @@ public class testWeather24 {
             String currentMaxTemp = driver.findElement(By.xpath(".//*[@id='forecastContent']/table/tbody/tr[3]/td[4]")).getText();
             weather.addMaxTemp(0, Integer.parseInt(currentMaxTemp.substring(0, 2)));
             String currentMinTemp = driver.findElement(By.xpath(".//*[@id='forecastContent']/table/tbody/tr[3]/td[5]")).getText();
-            weather.addMaxTemp(0, Integer.parseInt(currentMaxTemp.substring(0, 2)));
+            weather.addMinTemp(0, Integer.parseInt(currentMinTemp.substring(0,1)));
 
             String Day2MaxTemp = driver.findElement(By.xpath(".//*[@id='forecastContent']/table/tbody/tr[4]/td[4]")).getText();
             weather.addMaxTemp(1, Integer.parseInt(Day2MaxTemp.substring(0, 2)));
             String Day2MinTemp = driver.findElement(By.xpath(".//*[@id='forecastContent']/table/tbody/tr[4]/td[5]")).getText();
-            weather.addMaxTemp(1, Integer.parseInt(Day2MinTemp.substring(0, 2)));
+            weather.addMinTemp(1, Integer.parseInt(Day2MinTemp.substring(0, 1)));
 
             String Day3MaxTemp = driver.findElement(By.xpath(".//*[@id='forecastContent']/table/tbody/tr[5]/td[4]")).getText();
             weather.addMaxTemp(2, Integer.parseInt(Day3MaxTemp.substring(0, 2)));
             String Day3MinTemp = driver.findElement(By.xpath(".//*[@id='forecastContent']/table/tbody/tr[5]/td[5]")).getText();
-            weather.addMaxTemp(2, Integer.parseInt(Day3MinTemp.substring(0, 2)));
+            weather.addMinTemp(2, Integer.parseInt(Day3MinTemp.substring(0, 2)));
 
             String Day4MaxTemp = driver.findElement(By.xpath(".//*[@id='forecastContent']/table/tbody/tr[6]/td[4]")).getText();
             weather.addMaxTemp(3, Integer.parseInt(Day4MaxTemp.substring(0, 2)));
             String Day4MinTemp = driver.findElement(By.xpath(".//*[@id='forecastContent']/table/tbody/tr[6]/td[5]")).getText();
-            weather.addMaxTemp(3, Integer.parseInt(Day4MinTemp.substring(0, 2)));
+            weather.addMinTemp(3, Integer.parseInt(Day4MinTemp.substring(0, 2)));
 
             String Day5MaxTemp = driver.findElement(By.xpath(".//*[@id='forecastContent']/table/tbody/tr[7]/td[4]")).getText();
             weather.addMaxTemp(4, Integer.parseInt(Day5MaxTemp.substring(0, 2)));
             String Day5MinTemp = driver.findElement(By.xpath(".//*[@id='forecastContent']/table/tbody/tr[7]/td[5]")).getText();
-            weather.addMaxTemp(4, Integer.parseInt(Day5MinTemp.substring(0, 2)));
+            weather.addMinTemp(4, Integer.parseInt(Day5MinTemp.substring(0, 2)));
 
 
 
